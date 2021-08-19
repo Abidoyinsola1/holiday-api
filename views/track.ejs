@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+<h1 class="text-center mt-5"><%= heading %></h1>
+<div class="container">
+  <table class="table table-secondary table-striped">
+    <tr>
+      <th>Searched Country</th>
+      <th>Searched Time</th>
+    </tr>
+    <% searchedData.map((search) => {%>
+    <tr>
+      <td><%= search.searchedItem %></td>
+      <td><%= search.updated %></td>
+    </tr>
+    <% })%>
+  </table>
+</div>
