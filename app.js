@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const axios = require('axios').default;
+require('dotenv').config()
 const _ = require(`${__dirname}/country.js`)
 const app = express()
 const port = 4000
@@ -24,7 +25,8 @@ const Search = mongoose.model('search', searchSchema)
 
 
 app.get('/', async (req, res) => {
-    const url = `https://holidayapi.com/v1/holidays?pretty&key=74358ee9-15ce-4731-8dde-8d247131bece&country=${country}&year=2020`
+    const apiKey = process.env.API_KEY
+    const url = `https://holidayapi.com/v1/holidays?pretty&key=${apiKey}&country=${country}&year=2020`
 
     try {
 
