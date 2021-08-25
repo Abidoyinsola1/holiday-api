@@ -10,7 +10,8 @@ const port = 4000
 app.set('view engine', 'ejs')
 app.use(express.static(`${__dirname}/public`))
 app.use(bodyParser.urlencoded({ extended: true }))
-mongoose.connect('mongodb://localhost:27017/searchDB', { useNewUrlParser: true, useUnifiedTopology: true });
+const mongoose_uri = process.env.MONGODB_URI
+mongoose.connect(`${mongoose_uri}`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 var country = 'NG'
 const searchSchema = mongoose.Schema({
@@ -32,7 +33,6 @@ app.get('/', async (req, res) => {
 
         const response = await axios.get(url);
 
-        console.log(response.data)
         const holidays = response.data.holidays
         res.render('index', {
             heading: 'Home Page',
