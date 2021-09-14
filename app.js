@@ -5,7 +5,6 @@ const axios = require('axios').default;
 require('dotenv').config()
 const _ = require(`${__dirname}/country.js`)
 const app = express()
-const port = 4000
 
 app.set('view engine', 'ejs')
 app.use(express.static(`${__dirname}/public`))
@@ -74,4 +73,4 @@ app.post('/', (req, res) => {
     res.redirect('/')
 })
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.listen(process.env.PORT || 3000, () => console.log(`Listening on port 3000`))
