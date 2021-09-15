@@ -35,6 +35,7 @@ app.get('/', async (req, res) => {
         const holidays = response.data.holidays
         res.render('index', {
             heading: 'Home Page',
+            title: "Home - Holiday Listing",
             countryDetails: _,
             holidayDisplay: holidays
         })
@@ -51,6 +52,7 @@ app.get('/track', (req, res) => {
         } else {
             res.render('track', {
                 heading: 'Tracking Page',
+                title:`Tracking Page (${docs.length})`,
                 searchedData: docs
             })
         }
