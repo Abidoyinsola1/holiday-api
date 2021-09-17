@@ -1,9 +1,11 @@
 <%- include('partials/header.ejs') %>
-  <p class="header my-3">
+  <p class="header text-center">
     <%= heading %>
   </p>
   <div class="row">
-    <div class="col-4 px-5">
+
+    <!-- Form -->
+    <div class="col-md-4 col-sm-12 px-5 mt-3">
       <form action="/" method="post">
         <select name="country" class="">
           <option disabled selected>Select a Country</option>
@@ -14,29 +16,31 @@
             <% }) %>
         </select>
         <br />
-        <button class="p-2 border-0" type="submit">
+        <button class="p-2 mt-3 border-0" type="submit">
           Check it Out! <i class="fa fa-arrow-circle-down"></i>
         </button>
       </form>
     </div>
-    <div class="col-8">
-      <% holidayDisplay.map((holData)=> {%>
-        <div class="">
-          <div class="col-6 col-sm-3">
-            <div class="card w-75 m-3">
-              <div class="card-body text-center">
-                <h4 class="card-title">
-                  <%= holData.name %>
-                </h4>
-                <h6 class="card-text">
-                  <%= holData.date %>
-                    <h6 />
-                    <p>Public: <%= holData.public %>
-                    </p>
-              </div>
-            </div>            
+
+    <!-- Result -->
+    <div class="col-md-4 col-sm-12">
+      <div class="row">
+        <% holidayDisplay.map((holData)=> {%>
+          <div class="col-md-4 col-sm-12">
+          <div class="card mw-100 mh-100 mx-3 m-3">
+            <div class="card-body text-center">
+              <h4 class="card-title">
+                <%= holData.name %>
+              </h4>
+              <h6 class="card-text">
+                <%= holData.date %>
+                  <h6 />
+                  <p>Public: <%= holData.public %>
+                  </p>
+           </div>
           </div>
-        </div>
-        <% })%>
+      </div>
+
+      <% })%></div>
     </div>
   </div>

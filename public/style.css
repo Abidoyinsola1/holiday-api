@@ -4,13 +4,19 @@
     font-weight: 600;
 }
 
+.nav {
+    margin-left: 50vh;
+}
+
+button {
+    margin-left: 6em;
+}
+
 .header {
     font-size: 1.3rem;
     margin-left: 2.1rem;
 }
 
-
-
-
-
-
+.card {
+    background: #efefef;
+}
