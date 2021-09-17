@@ -34,7 +34,7 @@ app.get('/', async (req, res) => {
 
         const holidays = response.data.holidays
         res.render('index', {
-            heading: 'Home Page',
+            heading: 'Find Holiday Dates from any Country, Province or City for 2020',
             title: "Home - Holiday Listing",
             countryDetails: _,
             holidayDisplay: holidays
