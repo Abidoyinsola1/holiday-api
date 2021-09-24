@@ -2,7 +2,7 @@
 
 A simple API website that fetches public and private holidays of countries, regions and provinces. It has a page that tracks the countries and also the time they were searched.
 
-[Live Demo](doyinsola-holiday-api.herokuapp.com)
+[Live Demo](https://doyinsola-holiday-api.herokuapp.com)
 
 ![screenshot](public\holidays.PNG)
 
